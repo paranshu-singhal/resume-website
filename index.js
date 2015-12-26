@@ -1,4 +1,17 @@
 $(document).ready(function(){
+if(!localStorage.feed)localStorage.feed=-1;
+if(localStorage.feed=="true"){
+	var path=document.getElementsByClassName('like-btn-fill');
+    for(var i=0;i<path.length;i++){
+		path[i].setAttribute('fill','#0f0');
+	}
+	}
+else if(localStorage.feed=="false"){
+	var path=document.getElementsByClassName('unlike-btn-fill');
+    for(var i=0;i<path.length;i++){
+		path[i].setAttribute('fill','#f00');
+	}
+	}
 resizeDiv();
 window.onresize=function(){resizeDiv(); };
 function resizeDiv() {
@@ -55,6 +68,40 @@ $("body").on("click","#git-logo",function(){
 $("body").on("click","#fb-logo",function(){
 	window.open("https://www.facebook.com/paranshu.singhal","_blank");
 });
+$("#Capa_2").click(function(){
+	var nam=prompt("Please enter your name: ");
+    if(nam.length>2){
+	localStorage.feed="true";
+	document.getElementById("thank-ul").className=("thank-anim");
+	window.setTimeout(function(){document.getElementById("thank-ul").className=("");},5000);
+	var path=document.getElementsByClassName('like-btn-fill');
+    for(var i=0;i<path.length;i++){
+		path[i].setAttribute('fill','#0f0');
+	}
+	var path=document.getElementsByClassName('unlike-btn-fill');
+    for(var i=0;i<path.length;i++){
+		path[i].setAttribute('fill','#fff');
+	}
+	}
+	//document.getElementById("thank-ul").className="";
+});
+$("#Capa_1").click(function(){
+	var nam=prompt("Please enter your name: ");
+    if(nam.length>2){
+	localStorage.feed="false";
+	document.getElementById("thank-ul").className=("thank-anim");
+	window.setTimeout(function(){document.getElementById("thank-ul").className=("");},5000);
+	
+	var path=document.getElementsByClassName('unlike-btn-fill');
+    for(var i=0;i<path.length;i++){
+		path[i].setAttribute('fill','#f00');
+	}
+	var path=document.getElementsByClassName('like-btn-fill');
+    for(var i=0;i<path.length;i++){
+		path[i].setAttribute('fill','#fff');
+	}
+	}
+	//document.getElementById("thank-ul").className="";
+});
 });
 
-	
