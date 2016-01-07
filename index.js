@@ -1,4 +1,18 @@
 $(document).ready(function(){
+setTimeout(function(){
+	var p=document.getElementsByClassName("nav-ul");
+	for(var i=0;i<p.length;i++){
+		p[i].style.visibility="visible";
+	}
+document.getElementById("nav-abtme").className+=" bounceInRight ";
+document.getElementById("nav-edu").className+=" bounceInUp ";
+document.getElementById("nav-empl").className+="  flip ";
+document.getElementById("nav-skills").className+=" growIn ";
+document.getElementById("nav-proj").className+="  flip ";
+document.getElementById("nav-trophy").className+=" bounceInDown ";
+document.getElementById("nav-phone").className+=" bounceInLeft ";
+},1000);
+
 if(!localStorage.feed)localStorage.feed=-1;
 if(localStorage.feed=="true"){
 	var path=document.getElementsByClassName('like-btn-fill');
